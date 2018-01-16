@@ -65,7 +65,7 @@ if ($text == '確認') {
               [
                   "type" => "uri",
                   "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => https://www.yahoo.co.jp/"
+                  "uri" => "https://www.yahoo.co.jp/"
               ]
             ]
            ]
