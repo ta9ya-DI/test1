@@ -38,7 +38,7 @@ if ($text == '確認') {
             ]
         ]
     ];
- else if ($text == 'レシピ') {
+} else if ($text == 'レシピ') {
   $response_format_text = [
     "type" => "template",
     "altText" => "おすすめレシピをご案内しています。",
