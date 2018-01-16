@@ -107,7 +107,7 @@ if ($text == '確認') {
     // それ以外は送られてきたテキストをオウム返し
     $messageData = [
         "type" => "text",
-        "text" => $message->{"text"}
+        "text" => $text
     ];
 }
 
