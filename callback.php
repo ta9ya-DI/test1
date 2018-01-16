@@ -115,8 +115,8 @@ if ($message->{"text"} == '確認') {
 } elseif ($message->{"text"} == 'img1') {
 	$messageData = [
 		'type' => 'image',
-		'originalContentUrl' => 'test1 / image / クーポン.jpg ',
-		'previewImageUrl' => 'test1 / image / クーポン.jpg '
+		'originalContentUrl' => 'https://github.com/ta9ya-DI/test1/image/クーポン.jpg',
+		'previewImageUrl' => 'https://github.com/ta9ya-DI/test1/image/クーポン.jpg'
 	];
 }elseif ($message->{"text"} == 'abu') {
 	$messageData = [
