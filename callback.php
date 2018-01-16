@@ -19,21 +19,21 @@ $userinfo = $jsonObj->{"events"}[0]->{"user"};
 if ($text == '確認') {
     // 確認ダイアログタイプ
     $messageData = [
-        'type' => 'template',
-        'altText' => '確認ダイアログ',
-        'template' => [
-            'type' => 'buttons',
-            'text' => '元気ですかー？',
-            'actions' => [
+        "type" => "template",
+        "altText" => "確認ダイアログ",
+        "template" => [
+            "type" => "buttons",
+            "text" => "元気ですかー？",
+            "actions" => [
                 [
-                    'type' => 'message',
-                    'label' => '元気です',
-                    'text' => '元気です'
+                    "type" => "message",
+                    "label" => "元気です",
+                    "text" => "元気です"
                 ],
                 [
-                    'type' => 'message',
-                    'label' => 'まあまあです',
-                    'text' => 'まあまあです'
+                    "type" => "message",
+                    "label" => "まあまあです",
+                    "text" => "まあまあです"
                 ],
             ]
         ]
@@ -41,40 +41,40 @@ if ($text == '確認') {
 } elseif ($text == 'カルーセル') {
     // カルーセルタイプ
     $messageData = [
-        'type' => 'template',
-        'altText' => 'カルーセル',
-        'template' => [
-            'type' => 'carousel',
-            'columns' => [
+        "type" => "template",
+        "altText" => "カルーセル",
+        "template" => [
+            "type" => "carousel",
+            "columns" => [
                 [
-                    'title' => 'カルーセル1',
-                    'text' => 'カルーセル1です',
-                    'actions' => [
+                    "title" => "カルーセル1",
+                    "text" => "カルーセル1です",
+                    "actions" => [
                         [
-                            'type' => 'postback',
-                            'label' => 'webhookにpost送信',
-                            'data' => 'value'
+                            "type" => "postback",
+                            "label" => "webhookにpost送信",
+                            "data" => "value"
                         ],
                         [
-                            'type' => 'uri',
-                            'label' => '美容の口コミ広場を見る',
-                            'uri' => 'http://clinic.e-kuchikomi.info/'
+                            "type" => "uri",
+                            "label" => "美容の口コミ広場を見る",
+                            "uri" => "http://clinic.e-kuchikomi.info/"
                         ]
                     ]
                 ],
                 [
-                    'title' => 'カルーセル2',
-                    'text' => 'カルーセル2です',
-                    'actions' => [
+                    "title" => "カルーセル2",
+                    "text" => "カルーセル2です",
+                    "actions" => [
                         [
-                            'type' => 'postback',
-                            'label' => 'webhookにpost送信',
-                            'data' => 'value'
+                            "type" => "postback",
+                            "label" => "webhookにpost送信",
+                            "data" => "value"
                         ],
                         [
-                            'type' => 'uri',
-                            'label' => '女美会を見る',
-                            'uri' => 'https://jobikai.com/'
+                            "type" => "uri",
+                            "label" => "女美会を見る",
+                            "uri" => "https://jobikai.com/"
                         ]
                     ]
                 ],
@@ -83,31 +83,31 @@ if ($text == '確認') {
     ];
 } elseif ($text == 'google') {
 	$messageData = [
-		'type'=>'uri',
-		'linkUri'=>'https://google.com',
-		'area'=>[
-			'x'=>0,
-			'y'=>0,
-			'wigth'=>520,
-			'height'=>1040
+		"type"=>"uri",
+		"linkUri"=>"https://google.com",
+		"area"=>[
+			"x"=>0,
+			"y"=>0,
+			"wigth"=>520,
+			"height"=>1040
 		]
 	];
 } elseif ($text == 'img1') {
 	$messageData = [
-		'type' => 'image',
-		'originalContentUrl' => 'https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg',
-		'previewImageUrl' => 'https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg'
+		"type" => "image",
+		"originalContentUrl" => "https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg",
+		"previewImageUrl" => "https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg"
 	];
 }elseif ($text == 'abu') {
 	$messageData = [
-		'type'=>'text',
-		'text'=>'ABU'
+		"type"=>"text",
+		"text"=>"ABU"
 	];
 } else {
     // それ以外は送られてきたテキストをオウム返し
     $messageData = [
-        'type' => 'text',
-        'text' => $message->{"text"}
+        "type" => "text",
+        "text" => $message->{"text"}
     ];
 }
 
