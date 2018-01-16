@@ -38,7 +38,7 @@ if ($text == '確認') {
             ]
         ]
     ];
-} else if ($text == 'レシピ') {
+}elseif ($text == 'レシピ') {
   $response_format_text = [
     "type" => "template",
     "altText" => "おすすめレシピをご案内しています。",
@@ -71,7 +71,7 @@ if ($text == '確認') {
       ]
     ]
   ];
-} elseif ($text == 'google') {
+}elseif ($text == 'google') {
 	$messageData = [
 		"type"=>"uri",
 		"linkUri"=>"https://google.com",
@@ -82,7 +82,7 @@ if ($text == '確認') {
 			"height"=>1040
 		]
 	];
-} elseif ($text == 'img1') {
+}elseif ($text == 'img1') {
 	$messageData = [
 		"type" => "image",
 		"originalContentUrl" => "https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg",
