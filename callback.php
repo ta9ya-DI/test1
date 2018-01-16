@@ -115,8 +115,8 @@ if ($message->{"text"} == '確認') {
 } elseif ($message->{"text"} == 'img1') {
 	$messageData = [
 		'type' => 'image',
-		'originalContentUrl' => 'https://www.dropbox.com/home/%E3%82%A2%E3%83%97%E3%83%AA/Heroku/radiant-brook-65649/imgs?preview=original.jpg',
-		'previewImageUrl' => 'https://www.dropbox.com/home/%E3%82%A2%E3%83%97%E3%83%AA/Heroku/radiant-brook-65649/imgs?preview=original.jpg'
+		'originalContentUrl' => 'test1 / image / クーポン.jpg ',
+		'previewImageUrl' => 'test1 / image / クーポン.jpg '
 	];
 }elseif ($message->{"text"} == 'abu') {
 	$messageData = [
