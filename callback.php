@@ -68,6 +68,7 @@ if ($text == 'Šm”F') {
                   "uri" => https://www.yahoo.co.jp/"
               ]
             ]
+           ]
       ]
     ]
   ];
