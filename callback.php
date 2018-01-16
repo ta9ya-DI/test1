@@ -2,7 +2,7 @@
 
 //$accessToken = 'Line Developersで発行したアクセストークン';
 //$accessToken = 'UqtniJOOLghRO23SvswdFEXQaoYKi/ZPlXn9jZZY3DcILNh0rRDxRV2NZCFduMsCb/XkqNdGxqu1K5y+55jkf1TNL+SfRS5vVCy1Rke8Q5JIO5oboKLx2oVOWZvcrHnxKZOROr9qdAoWk9eGfYqHxQdB04t89/1O/w1cDnyilFU=';
-$accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
+$accessToken = getenv('LineMessageAPIChannelAccessToken');
 
 //ユーザーからのメッセージ取得
 $jsonString = file_get_contents('php://input');
