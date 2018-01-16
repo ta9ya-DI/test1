@@ -38,49 +38,39 @@ if ($text == '確認') {
             ]
         ]
     ];
-} elseif ($text == 'カルーセル') {
-    // カルーセルタイプ
-    $messageData = [
-        "type" => "template",
-        "altText" => "カルーセル",
-        "template" => [
-            "type" => "carousel",
-            "columns" => [
-                [
-                    "title" => "カルーセル1",
-                    "text" => "カルーセル1です",
-                    "actions" => [
-                        [
-                            "type" => "postback",
-                            "label" => "webhookにpost送信",
-                            "data" => "value"
-                        ],
-                        [
-                            "type" => "uri",
-                            "label" => "美容の口コミ広場を見る",
-                            "uri" => "http://clinic.e-kuchikomi.info/"
-                        ]
-                    ]
-                ],
-                [
-                    "title" => "カルーセル2",
-                    "text" => "カルーセル2です",
-                    "actions" => [
-                        [
-                            "type" => "postback",
-                            "label" => "webhookにpost送信",
-                            "data" => "value"
-                        ],
-                        [
-                            "type" => "uri",
-                            "label" => "女美会を見る",
-                            "uri" => "https://jobikai.com/"
-                        ]
-                    ]
-                ],
+ else if ($text == 'レシピ') {
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "おすすめレシピをご案内しています。",
+    "template" => [
+      "type" => "carousel",
+      "columns" => [
+          [
+          "thumbnailImageUrl" => "https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg",
+            "title" => "ロールキャベツ",
+            "text" => "こちらにしますか？",
+            "actions" => [
+              [
+                  "type" => "uri",
+                  "label" => "詳しく見る（ブラウザ起動）",
+                  "uri" => "https://google.com"
+              ]
             ]
-        ]
-    ];
+          ],
+          [
+          "thumbnailImageUrl" => "https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg",
+            "title" => "筑前煮",
+            "text" => "こちらにしますか？",
+            "actions" => [
+              [
+                  "type" => "uri",
+                  "label" => "詳しく見る（ブラウザ起動）",
+                  "uri" => https://www.yahoo.co.jp/"
+              ]
+            ]
+      ]
+    ]
+  ];
 } elseif ($text == 'google') {
 	$messageData = [
 		"type"=>"uri",
