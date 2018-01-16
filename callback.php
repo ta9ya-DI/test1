@@ -34,11 +34,11 @@ if ($text == '確認') {
                     "type" => "message",
                     "label" => "まあまあです",
                     "text" => "まあまあです"
-                ],
+                ]
             ]
         ]
     ];
-elseif ($text == 'レシピ') {
+}elseif ($text == 'レシピ') {
   $response_format_text = [
     "type" => "template",
     "altText" => "おすすめレシピをご案内しています。",
