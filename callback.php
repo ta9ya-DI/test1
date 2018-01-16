@@ -1,25 +1,28 @@
 <?php
 
 //$accessToken = 'Line Developersで発行したアクセストークン';
-$accessToken = 'UqtniJOOLghRO23SvswdFEXQaoYKi/ZPlXn9jZZY3DcILNh0rRDxRV2NZCFduMsCb/XkqNdGxqu1K5y+55jkf1TNL+SfRS5vVCy1Rke8Q5JIO5oboKLx2oVOWZvcrHnxKZOROr9qdAoWk9eGfYqHxQdB04t89/1O/w1cDnyilFU=';
+//$accessToken = 'UqtniJOOLghRO23SvswdFEXQaoYKi/ZPlXn9jZZY3DcILNh0rRDxRV2NZCFduMsCb/XkqNdGxqu1K5y+55jkf1TNL+SfRS5vVCy1Rke8Q5JIO5oboKLx2oVOWZvcrHnxKZOROr9qdAoWk9eGfYqHxQdB04t89/1O/w1cDnyilFU=';
+$accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
 
+//ユーザーからのメッセージ取得
 $jsonString = file_get_contents('php://input');
-error_log($jsonString);
 $jsonObj = json_decode($jsonString);
 
-$message = $jsonObj->{"events"}[0]->{"message"};
+$type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
+//メッセージ取得
+$text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
 $userinfo = $jsonObj->{"events"}[0]->{"user"};
 
 // 送られてきたメッセージの中身からレスポンスのタイプを選択
-if ($message->{"text"} == '確認') {
+if ($text == '確認') {
     // 確認ダイアログタイプ
     $messageData = [
         'type' => 'template',
         'altText' => '確認ダイアログ',
         'template' => [
-            'type' => 'confirm',
+            'type' => 'buttons',
             'text' => '元気ですかー？',
             'actions' => [
                 [
@@ -35,30 +38,7 @@ if ($message->{"text"} == '確認') {
             ]
         ]
     ];
-} elseif ($message->{"text"} == 'button') {
-    // ボタンタイプ
-    $messageData = [
-        'type' => 'template',
-        'altText' => 'ボタン',
-        'template' => [
-            'type' => 'buttons',
-            'title' => 'タイトルです',
-            'text' => '選択してね',
-            'actions' => [
-                [
-                    'type' => 'postback',
-                    'label' => 'webhookにpost送信',
-                    'data' => 'value'
-                ],
-                [
-                    'type' => 'uri',
-                    'label' => 'googleへ移動',
-                    'uri' => 'https://google.com'
-                ]
-            ]
-        ]
-    ];
-} elseif ($message->{"text"} == 'カルーセル') {
+} elseif ($text == 'カルーセル') {
     // カルーセルタイプ
     $messageData = [
         'type' => 'template',
@@ -101,7 +81,7 @@ if ($message->{"text"} == '確認') {
             ]
         ]
     ];
-} elseif ($message->{"text"} == 'google') {
+} elseif ($text == 'google') {
 	$messageData = [
 		'type'=>'uri',
 		'linkUri'=>'https://google.com',
@@ -112,13 +92,13 @@ if ($message->{"text"} == '確認') {
 			'height'=>1040
 		]
 	];
-} elseif ($message->{"text"} == 'img1') {
+} elseif ($text == 'img1') {
 	$messageData = [
 		'type' => 'image',
 		'originalContentUrl' => 'https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg',
 		'previewImageUrl' => 'https://github.com/ta9ya-DI/test1/tree/master/image/coupon.jpg'
 	];
-}elseif ($message->{"text"} == 'abu') {
+}elseif ($text == 'abu') {
 	$messageData = [
 		'type'=>'text',
 		'text'=>'ABU'
@@ -135,7 +115,6 @@ $response = [
     'replyToken' => $replyToken,
     'messages' => [$messageData]
 ];
-error_log(json_encode($response));
 
 $ch = curl_init('https://api.line.me/v2/bot/message/reply');
 curl_setopt($ch, CURLOPT_POST, true);
