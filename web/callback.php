@@ -1,5 +1,5 @@
 <?php
-$accessToken = getenv('LINE_CHANNEL_ACCESS_TOKEN');
+$accessToken = getenv('LineMessageAPIChannelAccessToken');
 
 
 //ユーザーからのメッセージ取得
